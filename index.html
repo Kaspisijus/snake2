@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <title>Agar.io NN</title>
+
+    <script src="https://cdn.rawgit.com/wagenaartje/neataptic/a7610e38/dist/neataptic.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="js/car.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/field.js"></script>
+    <style>
+      #game_grid div {
+        border: 1px solid green;
+        width: 15px;
+        height: 15px;
+        margin: 1px;
+        float:left;
+      }
+      #game_grid div.new_line {
+        clear:left;
+        width:0;
+        height:0;
+        margin:0;
+        border:none;
+      }
+      div.food_cell {
+        background-color: green;
+      }
+      div.car_cell {
+        background-color: red;
+      }
+      #result_table {
+        padding:0;
+      }
+
+      #result_table td, th {
+        padding:3px;
+        margin:0;
+        text-align: center;
+        border: 1px solid black;
+      }
+
+      #result_table th {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game_grid">placeholder</div>
+    <div style="clear:both; height: 20px"></div>
+
+    <label for="generations">Generations:</label>
+    <select id="generations">
+      <option>1</option>
+      <option>5</option>
+      <option>20</option>
+      <option>50</option>
+      <option>100</option>
+      <option>500</option>
+      <option>1000</option>
+    </select>
+
+    <label for="pop_size">Population size:</label>
+    <select id="pop_size">
+      <option>1</option>
+      <option>5</option>
+      <option>20</option>
+      <option>50</option>
+      <option>100</option>
+    </select>
+
+    <input type="button" value="Clear grid" onclick="Field.cleanGrid()" >
+    <input type="button" value="Start learning" onclick="startLearning()" >
+
+    <div style="clear:both; height: 20px"></div>
+
+    <table id="result_table">
+      <tr>
+        <th>Gen #</th>
+        <th>Avg. score</th>
+        <th>Best car score</th>
+        <th>Best car ID</th>
+        <th>Best car moves</th>
+        <th>Best car foods</th>
+        <th>Play</th>
+      </tr>
+    </table>
+    <br />
+
+    
+
+  </body>
+</html>
